@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import Widget from './Widget.js';
 
 class About extends Component {
 	constructor(props){
 		super(props);
+		// this.state = {
+			// zipcode: '',
+		// 	main: '',
+		// 	temp: '',
+		// 	name: '',
+		// 	error: ''
+		// }
 		this.state = {
 			zipcode: '',
-			main: '',
-			temp: '',
-			name: ''
+			weatherData: ''
 		}
+
 
 		this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -30,9 +37,10 @@ class About extends Component {
 		})
 		.then((json) => {
 			base.setState({
-				main: json.weather[0].main,
-				temp: json.main.temp,
-				name: json.name
+				weatherData: json
+				// main: json.weather[0].main,
+				// temp: json.main.temp,
+				// name: json.name
 			});
 		})
 		.catch((ex) => {
@@ -42,23 +50,27 @@ class About extends Component {
 
 	render(){
 		let weatherInfo = this.state;
+
 		return(
 			<div className="About">
 				<div className="card">
+
 					<form onSubmit={this.handleSubmit}>
 						Enter ye' zip here:
 						<div className="input-field inline">
 							<input type="number" onChange={this.handleChange} />
-							<label data-error="wrong" data-success="right">Zip</label>
 						</div>
 						<input className="waves-effect waves-light btn #424242 grey darken-3" type="submit" value="Get ye forecast!" />
 					</form>
 
-					<div>
+					<Widget weatherData={this.state.weatherData} zipcode={this.state.zipcode}/>		
+					{/* <div>
 						<p>The skys be {weatherInfo.main}y</p>
 						<p>With a temperature of {weatherInfo.temp}</p>
 						<p>On the stormy seas of {weatherInfo.name}</p>
-					</div>
+					</div> */}
+
+		
 				</div>
 			</div>
 		);
@@ -66,3 +78,5 @@ class About extends Component {
 }
 
 export default About;
+
+
