@@ -31,8 +31,13 @@ main {
   flex: 1 0 auto;
 }
 
+.card {
+  background-color: #eee;
+  color: #000;
+}
+
 .ship {
-  background-image: url("../public/ship.jpg");
+  /* background-image: url("../public/ship.jpg"); */
 }
 
 .page-footer {
