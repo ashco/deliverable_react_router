@@ -1,0 +1,44 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  background: #222;
+  color: #fff;
+}
+
+.nav {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.nav__brand {
+  height: 64px;
+  width: 64px;
+}
+@media screen and (max-width: 600px){
+  .nav__brand {
+    height: 56px;
+    width: 56px;
+  } 
+}
+
+.nav__link {
+  color: #000;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.ship {
+  background-image: url("../public/ship.jpg");
+}
+
+.page-footer {
+  background-color: #fff;
+}
+
+.footer__text {
+  color: #000;
+}
