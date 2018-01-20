@@ -64,12 +64,6 @@ class About extends Component {
 					</form>
 
 					<Widget weatherData={this.state.weatherData} zipcode={this.state.zipcode}/>		
-					{/* <div>
-						<p>The skys be {weatherInfo.main}y</p>
-						<p>With a temperature of {weatherInfo.temp}</p>
-						<p>On the stormy seas of {weatherInfo.name}</p>
-					</div> */}
-
 		
 				</div>
 			</div>
@@ -78,5 +72,3 @@ class About extends Component {
 }
 
 export default About;
-
-

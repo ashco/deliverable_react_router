@@ -19,7 +19,6 @@ import About from './About.js';
 class App extends Component {
   render() {
     return (
-      // <MuiThemeProvider muiTheme={muiTheme}>
       <Router>
         <div className="App">
         <body>    
@@ -55,7 +54,6 @@ class App extends Component {
         </body>
         </div>
       </Router>
-
     );
   }
 }
